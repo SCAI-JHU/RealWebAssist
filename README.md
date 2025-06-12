@@ -14,17 +14,13 @@ To use our benchmark, first clone the repository:
 ```bash
 https://github.com/SCAI-JHU/RealWebAssist.git
 ```
-Then unzip the datasets (the full benchmark includes dataset1.zip and dataset2.zip as it is too large for one zip file)
-```bash
-unzip dataset1.zip
-unzip dataset2.zip
-```
+Then please access our dataset with huggingface link https://huggingface.co/datasets/stonehj05/RealWebAssist
 
 Our benchmark evaluates correctness by determining if the model's output coordinates is within one of the correct bounding boxes.
 
 ### File Structure
 
-After unzipping, you would see folders 1-10 (corresponding to 10 human participants). Make a new folder **full_human_dataset** and put these folders under that directory
+After downloading the dataset, you would see folders 1-10 (corresponding to 10 human participants). Make a new folder **full_human_dataset** and put these folders under that directory
 
 The final file structure should be as follows: 
 
