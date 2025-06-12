@@ -12,9 +12,21 @@ It contains:
 ### Usage:
 To use our benchmark, first clone the repository:
 ```bash
-https://github.com/SCAI-JHU/RealWebAssist.git
+git clone https://github.com/SCAI-JHU/RealWebAssist.git
 ```
 Then please access our dataset with huggingface link https://huggingface.co/datasets/stonehj05/RealWebAssist
+
+You can download the dataset as follows:
+
+Install huggingface cli:
+```bash
+pip install huggingface_hub
+```
+
+Download Dataset:
+```bash
+huggingface-cli download stonehj05/RealWebAssist --repo-type dataset --local-dir ./RealWebAssist
+```
 
 Our benchmark evaluates correctness by determining if the model's output coordinates is within one of the correct bounding boxes.
 
