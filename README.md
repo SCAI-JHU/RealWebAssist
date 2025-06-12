@@ -68,12 +68,14 @@ Each folder for human data should have the following structure:
 To reproduce the baseline results, first set up a conda environment and install the necessary packages:
 ```bash
 conda create -n realwebassist python=3.9
-pip install transformers
+pip install transformers==4.48.0
 pip install qwen-vl-utils
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 pip install accelerate
 ```
 For reproducibility and to save cost, we provide the reasoning results for GPT-4o, Claude 3.7 Sonnet and OpenAI O1 (O1 costs around $200 USD for the whole benchmark).
+
+Note: Baseline experiments requires a GPU to run
 
 To run the baseline experiments without a reasoning model:
 
