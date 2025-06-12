@@ -354,10 +354,25 @@ if __name__ == "__main__":
         output_dir: where to output evaluation results
         history_steps: number of history steps to give, None for no history
     '''
-    base_dir = "/weka/scratch/tshu2/hshi33/Web_Instruction_Following_Full/full_human_dataset"
-    episodes = [1]
-    output_dir = "/weka/scratch/tshu2/hshi33/Web_Instruction_Following_Full/output_files/evaluation_results/"
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    base_dir = os.path.join(script_dir, "full_human_dataset")
+    episodes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    output_dir = os.path.join(script_dir, "output_files", "evaluation_results")
     history_steps = 10
-    image_output_dir = "/weka/scratch/tshu2/hshi33/Web_Instruction_Following_Full/output_files/output_images/"
+    image_output_dir = os.path.join(script_dir, "output_files", "output_images")
+    
+    os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(image_output_dir, exist_ok=True)
+    
     print(f"Model selected: {args.model_to_run}")
+    print(f"Base directory: {base_dir}")
+    print(f"Output directory: {output_dir}")
+    
+    if not os.path.exists(base_dir):
+        print(f"Dataset directory not found: {base_dir}")
+        print("Please ensure your dataset is in the 'data/full_human_dataset' directory")
+        print("Or modify the base_dir variable in the script to point to your dataset location")
+    
     evaluate_actions(base_dir, episodes, output_dir, history_steps, image_output_dir, args.model_to_run)
